@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+
 import './App.css';
+import { AlarmPage } from './components/pages/AlarmPage';
+import { ClockPage } from './components/pages/ClockPage';
+import { TimerPage } from './components/pages/TimerPage';
+import { ClockButton } from "./components/molecules/ClockButton";
+import { AlarmButton } from "./components/molecules/AlarmButton";
+import { TimerButton } from "./components/molecules/TimerButton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Link to="/">
+          <ClockButton />
+        </Link>
+        <br />
+        <Link to="/alarmpage">
+          <AlarmButton />
+        </Link>
+        <br />
+        <Link to="/timerpage">
+          <TimerButton />
+        </Link>
+      </div>
+      <Routes>
+        <Route path="/" element={<ClockPage/>} />
+        <Route path="/alarmpage" element={<AlarmPage/>} />
+        <Route path="/Timerpage" element={<TimerPage/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
