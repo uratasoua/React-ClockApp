@@ -1,9 +1,11 @@
+import ibuttoncss from "./IButton.module.scss";
+
 export const AlarmButton = () => {
     return (
-        <div className="iconButton">
-            <button>
-                <i className="fa-regular fa-bell"></i>
-                <p className="alarmTitle">アラーム</p>
+        <div>
+            <button className={ibuttoncss.iconButton}>
+                <i className="fa-regular fa-bell size"></i>
+                <p>アラーム</p>
             </button>
         </div>
     );

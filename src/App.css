@@ -1,5 +1,16 @@
-.App {
-  display: flex;
-  margin: 0 auto;
+body {
+  background-color: #2D2F41;
 }
 
+h1 {
+  color: #f9f9f9;
+  font-size: 96px;
+}
+
+p {
+  font-size: 32px;
+}
+
+.size {
+  font-size: 4em;
+}
