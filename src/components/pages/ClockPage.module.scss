@@ -1,0 +1,70 @@
+.timeText {
+    width: 100%;
+    color: #f9f9f9;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+}
+
+:root {
+    --degHour: 0;
+    --degMin: 0;
+    --degSec: 0;
+}
+
+.clock {
+    width: 500px;
+    height: 500px;
+    background: #2D2F41;
+    position: relative;
+    border-radius: 50%;
+    margin: 80px auto 32px;
+    box-shadow: 0 0 80px white;
+}
+
+.hhand,
+.mhand,
+.shand {
+    position: absolute;
+    transform-origin: bottom;
+    border-radius: 40%;
+}
+
+.hhand {
+    width: 16px;
+    height: 160px;
+    background: #f9f9f9;
+    top: calc(50% - 160px);
+    left: calc(50% - 8px);
+    rotate: var(--degHour);
+}
+
+.mhand {
+    width: 10px;
+    height: 220px;
+    background: #f9f9f9;
+    top: calc(50% - 220px);
+    left: calc(50% - 5px);
+    rotate: var(--degMin);
+}
+
+.shand {
+    width: 4px;
+    height: 200px;
+    background: #FF0000;
+    top: calc(50% - 200px);
+    left: calc(50% - 2px);
+    rotate: var(--degSec);
+}
+
+.shand::after {
+    border-radius: 50%;
+    display: block;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: #9E9E9E;
+    position: absolute;
+    bottom: -15px;
+    left: -15px;
+}
