@@ -35,18 +35,21 @@ export const ClockPage = () => {
     },[date]);
 
     return (
-        <div className="clockage">
-            <div className={pagecss.clock}>
-                <div className={pagecss.hhand}></div>
-                <div className={pagecss.mhand}></div>
-                <div className={pagecss.shand}></div>
+        <div className={pagecss.clockpage}>
+            <div className="clockbox">
+                <div className={pagecss.clock}>
+                    <div className={pagecss.hhand}></div>
+                    <div className={pagecss.mhand}></div>
+                    <div className={pagecss.shand}></div>
+                </div>
+                <div className={pagecss.timeText}>
+                    <p>日本の時間</p>
+                    {/* 呼び出し */}
+                    {/* .toString().padStart(2, '0') これではhとmが一桁の時に前に0をつける設定*/}
+                    <h1>{h.toString().padStart(2, '0')}:{m.toString().padStart(2, '0')}</h1>
+                </div>
             </div>
-            <div className={pagecss.timeText}>
-                <p>現在の時間</p>
-                {/* 呼び出し */}
-                {/* .toString().padStart(2, '0') これではhとmが一桁の時に前に0をつける設定*/}
-                <h1>{h.toString().padStart(2, '0')}:{m.toString().padStart(2, '0')}</h1>
-            </div>
+            
         </div>
     );
 };
