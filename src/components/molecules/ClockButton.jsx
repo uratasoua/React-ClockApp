@@ -5,7 +5,7 @@ export const ClockButton = () => {
     <div className="">
       <button className={ibuttoncss.iconButton}>
         <i className="fa-regular fa-clock size"></i>
-        <p>時計</p>
+        <h3>時計</h3>
       </button>
     </div>
   );

@@ -36,6 +36,14 @@ export const ClockPage = () => {
 
     return (
         <div className={pagecss.clockpage}>
+            <div className="leftSideBox">
+                <h3>アメリカ（ロサンゼルス）</h3>
+                <h3>韓国</h3>
+                <h3>パリ</h3>
+                <h3>ロシア</h3>
+                <h3>タイ</h3>
+                <h3>国名を追加する</h3>
+            </div>
             <div className="clockbox">
                 <div className={pagecss.clock}>
                     <div className={pagecss.hhand}></div>
@@ -43,7 +51,7 @@ export const ClockPage = () => {
                     <div className={pagecss.shand}></div>
                 </div>
                 <div className={pagecss.timeText}>
-                    <p>日本の時間</p>
+                    <h3>現在の時間</h3>
                     {/* 呼び出し */}
                     {/* .toString().padStart(2, '0') これではhとmが一桁の時に前に0をつける設定*/}
                     <h1>{h.toString().padStart(2, '0')}:{m.toString().padStart(2, '0')}</h1>

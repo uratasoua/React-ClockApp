@@ -5,7 +5,7 @@ export const AlarmButton = () => {
         <div>
             <button className={ibuttoncss.iconButton}>
                 <i className="fa-regular fa-bell size"></i>
-                <p>アラーム</p>
+                <h3>アラーム</h3>
             </button>
         </div>
     );
