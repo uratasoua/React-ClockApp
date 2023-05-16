@@ -1,5 +1,21 @@
 import { useEffect, useState } from "react";
 import pagecss from "./ClockPage.module.scss"
+import { SideBox } from "../organisms/SideBox";
+
+const countryData = [
+    {
+        id: 1,
+        title: "韓国（ソウル）",
+    },
+    {
+        id: 2,
+        title: "台湾（台北）",
+    },
+    {
+        id: 3,
+        title: "タイ（バンコク）",
+    },
+]
 
 export const ClockPage = () => {
     // 現在の時刻を格納
@@ -36,15 +52,8 @@ export const ClockPage = () => {
 
     return (
         <div className={pagecss.clockpage}>
-            <div className="leftSideBox">
-                <h3>アメリカ（ロサンゼルス）</h3>
-                <h3>韓国</h3>
-                <h3>パリ</h3>
-                <h3>ロシア</h3>
-                <h3>タイ</h3>
-                <h3>国名を追加する</h3>
-            </div>
-            <div className="clockbox">
+            <SideBox />
+            <div className={pagecss.clockBox}>
                 <div className={pagecss.clock}>
                     <div className={pagecss.hhand}></div>
                     <div className={pagecss.mhand}></div>

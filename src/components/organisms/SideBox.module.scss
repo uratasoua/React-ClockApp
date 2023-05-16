@@ -1,0 +1,17 @@
+.sideBox {
+    width: 220px;
+    height: auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    border-right: 2px solid #4b4b4b;
+    border-bottom: 2px solid #4b4b4b;
+}
+
+.sideBox h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 133px;
+    margin: 16px 0;
+    margin-left: 40px;
+}

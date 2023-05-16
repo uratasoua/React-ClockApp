@@ -27,7 +27,6 @@
 .shand {
     position: absolute;
     transform-origin: bottom;
-    border-radius: 40%;
 }
 
 .hhand {
@@ -71,4 +70,8 @@
 
 .clockpage {
     display: flex;
+}
+
+.clockBox {
+    margin-left: 160px;
 }
