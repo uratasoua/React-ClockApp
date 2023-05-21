@@ -1,23 +1,39 @@
 import { useEffect, useState } from "react";
 import pagecss from "./ClockPage.module.scss"
-import { SideBox } from "../organisms/SideBox";
+// import { SideBox } from "../organisms/SideBox";
+import { useModal } from "../organisms/UseModal";
 
 const countryData = [
     {
         id: 1,
-        title: "韓国（ソウル）",
+        name: "ソウル",
     },
     {
         id: 2,
-        title: "台湾（台北）",
+        name: "台北",
     },
     {
         id: 3,
-        title: "タイ（バンコク）",
+        name: "バンコク",
     },
 ]
 
 export const ClockPage = () => {
+
+    const { Modal, openModal, closeModal } = useModal();
+
+    // リスト
+    const List = () => {
+        const listData = countryData.map( (item) => {
+            return <li key={item.id}>{item.name}</li>
+        });
+        return (
+            <ul>
+                {listData}
+            </ul>
+        );
+    }
+    
     // 現在の時刻を格納
     const [date, setDate] = useState(new Date());
     // 文字の時計用の現在の時間と分を取得
@@ -52,7 +68,19 @@ export const ClockPage = () => {
 
     return (
         <div className={pagecss.clockpage}>
-            <SideBox />
+            <div className={pagecss.sideBox}>
+                <button onClick={openModal}>国を追加する</button>
+            </div>
+            <Modal>
+                <div className={pagecss.modalbox}>
+                    <div className={pagecss.modalheader}>
+                        <h2>国を追加</h2>
+                        <button onClick={closeModal}>×</button>
+                    </div>
+                <List />
+                </div>
+            </Modal>
+            {/* <SideBox /> */}
             <div className={pagecss.clockBox}>
                 <div className={pagecss.clock}>
                     <div className={pagecss.hhand}></div>
