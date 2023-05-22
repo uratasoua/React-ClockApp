@@ -17,18 +17,18 @@ export const Buttonbar = () => {
                     <ClockButton />
                 </Link>
                 <br />
-                <Link to="/alarmpage">
-                    <AlarmButton />
-                </Link>
-                <br />
                 <Link to="/timerpage">
                     <TimerButton />
+                </Link>
+                <br />
+                <Link to="/alarmpage">
+                    <AlarmButton />
                 </Link>
             </div>
             <Routes>
                 <Route path="/" element={<ClockPage />} />
-                <Route path="/alarmpage" element={<AlarmPage />} />
                 <Route path="/Timerpage" element={<TimerPage />} />
+                <Route path="/alarmpage" element={<AlarmPage />} />
             </Routes>
         </BrowserRouter>
     )

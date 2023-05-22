@@ -1,9 +1,11 @@
 .buttonbar {
     display: flex;
     position: absolute;
-    bottom: 8px;
+    bottom: 0px;
     left: 50%;
-    margin-left: -430px;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     width: 620px;
     display: flex;
     justify-content: space-between;

@@ -3,36 +3,63 @@ import pagecss from "./ClockPage.module.scss"
 // import { SideBox } from "../organisms/SideBox";
 import { useModal } from "../organisms/UseModal";
 
-const countryData = [
-    {
-        id: 1,
-        name: "ソウル",
-    },
-    {
-        id: 2,
-        name: "台北",
-    },
-    {
-        id: 3,
-        name: "バンコク",
-    },
-]
+// 国別データ管理
+// const countryData = [
+//     {
+//         id: 1,
+//         name: "ソウル",
+//     },
+//     {
+//         id: 2,
+//         name: "台北",
+//     },
+//     {
+//         id: 3,
+//         name: "パリ",
+//     },
+// ]
+
+function CountryList() {
+    const countries = [
+        { id: 1, name: 'ソウル' },
+        { id: 2, name: '台北' },
+        { id: 3, name: 'パリ' }
+    ];
+
+    function onClick(countryId, e) {
+        console.log(countryId + 'だよ');
+        console.log('event:', e);
+    } 
+
+    
+    const countryData = countries.map(country => (
+        <div
+            onClick={e => onClick(country.id, e)}
+            key={country.id}
+        >
+            {country.name}
+        </div>
+    ));
+    return (
+        <>
+            <div className={pagecss.countryBox}>
+                <h3>韓国</h3>
+                <p>{countryData[0]}</p>
+            </div>
+            <div className={pagecss.countryBox}>
+                <h3>台湾</h3>
+                <p>{countryData[1]}</p>
+            </div>
+            <div className={pagecss.countryBox}>
+                <h3>フランス</h3>
+                <p>{countryData[2]}</p>
+            </div>
+        </>
+    )
+}
 
 export const ClockPage = () => {
-
     const { Modal, openModal, closeModal } = useModal();
-
-    // リスト
-    const List = () => {
-        const listData = countryData.map( (item) => {
-            return <li key={item.id}>{item.name}</li>
-        });
-        return (
-            <ul>
-                {listData}
-            </ul>
-        );
-    }
     
     // 現在の時刻を格納
     const [date, setDate] = useState(new Date());
@@ -69,7 +96,7 @@ export const ClockPage = () => {
     return (
         <div className={pagecss.clockpage}>
             <div className={pagecss.sideBox}>
-                <button onClick={openModal}>国を追加する</button>
+                <button onClick={openModal}><span>＋</span>国を追加する</button>
             </div>
             <Modal>
                 <div className={pagecss.modalbox}>
@@ -77,7 +104,7 @@ export const ClockPage = () => {
                         <h2>国を追加</h2>
                         <button onClick={closeModal}>×</button>
                     </div>
-                <List />
+                <CountryList />
                 </div>
             </Modal>
             {/* <SideBox /> */}
